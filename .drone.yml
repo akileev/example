@@ -1,5 +1,20 @@
 kind: pipeline
-name: default
+name: build-develop
+
+steps:
+  - name: test
+    image: maven:3.8.5-openjdk-17
+    commands:
+      - mvn package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      - mvn test -B
+
+trigger:
+  branch:
+    - develop
+
+---
+kind: pipeline
+name: build-on-push
 
 steps:
   - name: test
@@ -11,3 +26,5 @@ steps:
 trigger:
   event:
     - push
+  refs:
+    - refs/heads/*
