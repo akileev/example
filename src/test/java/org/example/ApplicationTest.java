@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class ApplicationTest {
+public class ApplicationTest {
     @Test
     public void exampleTest() {
         assertThat(true).isTrue();
