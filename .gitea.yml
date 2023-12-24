@@ -5,7 +5,8 @@ steps:
 - name: test
   image: maven:3-jdk-10
   commands:
-  - echo 1
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
 
 trigger:
   event:
