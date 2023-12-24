@@ -9,8 +9,5 @@ steps:
       - mvn test -B
 
 trigger:
-  event:
-    - pull_request
-  ref:
-    - refs/heads/develop
-    - refs/heads/release/*
+  branch:
+    - develop
