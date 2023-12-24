@@ -14,7 +14,7 @@ trigger:
 
 ---
 kind: pipeline
-name: build-on-push
+name: build-on-pull-request
 
 steps:
   - name: test
@@ -25,6 +25,4 @@ steps:
 
 trigger:
   event:
-    - push
-  refs:
-    - refs/heads/*
+    - pull_request
