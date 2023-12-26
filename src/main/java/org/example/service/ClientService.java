@@ -17,7 +17,7 @@ public class ClientService {
     private final ClientMapper mapper;
 
     public List<ClientDto> getAll(Pageable pageable) {
-        return repository.findAll().stream().map(mapper::toDto).toList();
+        return repository.findAll(pageable).stream().map(mapper::toDto).toList();
     }
 
     public ClientDto create(ClientDto client) {
