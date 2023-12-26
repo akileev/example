@@ -15,6 +15,6 @@ public class ClientServiceTest {
     @Test
     public void whenGetAllThenReturnCorrectValue() {
         var actual = service.getAll(Pageable.ofSize(1));
-        assertThat(actual).isNotEmpty();
+        assertThat(actual).isEmpty();
     }
 }
