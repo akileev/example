@@ -1,10 +1,12 @@
 package org.example.web;
 
 import lombok.RequiredArgsConstructor;
+import org.example.model.ClientDto;
 import org.example.service.ClientService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,5 +19,10 @@ public class ClientController {
     @GetMapping
     public ResponseEntity<?> index(Pageable pageable) {
         return ResponseEntity.ok(clientService.getAll(pageable));
+    }
+
+    @PostMapping
+    public ResponseEntity create(ClientDto client) {
+        return ResponseEntity.ok(clientService.create(client));
     }
 }
